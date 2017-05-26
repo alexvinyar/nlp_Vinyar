@@ -1,0 +1,12 @@
+define Unstressed [o | es | e | en];
+
+read lexc spanish.lexc
+define Lexicon;
+
+define EReplacement e -> i || _ ?* "^" Unstressed;
+
+define Cleanup "^" -> 0;
+
+define Gram Lexicon .o. EReplacement .o. Cleanup;
+
+regex Gram;
